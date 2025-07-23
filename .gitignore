@@ -19,17 +19,11 @@ wheelhouse/
 plot_output/
 *.csv
 # 忽略video文件夹下的所有文件
-/video/*
+video/*
 # 但是不要忽略video文件夹本身
 !video/
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,c++,python,jetbrains+all,ros,ros2
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,visualstudiocode,c++,python,jetbrains+all,ros,ros2
-rtdetrv2/runs/*
-rtdetrv2/dataset/*
-hot/dataset/*
-rtdetrv2/references/deploy/lib/checkpoint/*
-hot/checkpoint/pretrained/*
-rtdetrv2/references/deploy/checkpoint/pretrained/*
 orbbec/build
 orbbec/build/*
 orbbec/install
@@ -37,6 +31,26 @@ orbbec/install/*
 openpose/build/*
 opepose/models/*
 
+TrackNetV3/exp
+TrackNetV3/data/
+TrackNetV3/test/
+TrackNetV3/ckpts/
+TrackNetV3/figure/
+TrackNetV3/__pycache__/
+TrackNetV3/utils/__pycache__/
+TrackNetV3/prediction/
+TrackNetV3/test_prediction/
+TrackNetV3/dataset_test.py
+TrackNetV3/fps_exp.py
+TrackNetV3/fps_exp_1.py
+TrackNetV3/worker.py
+TrackNetV3/temp.py
+TrackNetV3/model_compare.py
+TrackNetV3/predict_old.py
+TrackNetV3/GCN/data/kinetics_dataset
+TrackNetV3/GCN/work_dir
+TrackNetV3/models
+TrackNetV3/video
 
 ### C++ ###
 # Prerequisites

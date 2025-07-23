@@ -6,7 +6,7 @@ download_url = [
     ["3rdparty.tar", "https://drive.google.com/file/d/1jSpaNgoThNycs8gIWZEOBc846MXC6yX2/view?usp=sharing",
      ["./openpose"]],
     ["models.tar", "https://drive.google.com/file/d/1mAU5xbDm5HfRYcB1HIEKCgfXUvS_dJw9/view?usp=sharing",
-     ["./openpose"]],
+     ["./openpose","TrackNetV3"]],
 ]
 
 for tar_file_name, url, unzip_dir in download_url:

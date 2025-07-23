@@ -69,8 +69,11 @@ pip3 install -r requirements.txt
 ### 1.3 openpose编译
 
 <details>
+
 ~~~
+# 克隆openpose仓库
 git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
+# 下载openpose编译的必要文件
 python prepare_cmake_openpose.py
 ~~~
 
@@ -104,7 +107,7 @@ python download_pretrain_model.py
 
 # 2. 运行
 
-### 2.1 通过orbbecsdk录制视频
+### 2.1 通过orbbecsdk录制视频，默认设置为30秒一个视频，不间断录制
 
 ~~~
 python ./multi_device_sync_record.py -dn 2
@@ -114,19 +117,15 @@ python ./multi_device_sync_record.py -dn 2
 
 -dn:摄像机的数量
 
-### 2.2 使用rt-detr-v2对录制视频进行裁剪，提取关键动作视频片段
+### 2.2 使用TracknetV3提取视频中的击球片段并切片，并对该击球动作进行分析
 
 ~~~
-python ./rtdetrv2_video.py -c ./rtdetrv2/configs/rtdetrv2/rtdetrv2_r18vd_sp3_120e_coco.yml -r ./rtdetrv2/best.pth -vf ./video/input/zed_test.mp4 -p
+python get_shot_frame.py --video_file ./video/game3.mp4 --phase test
 ~~~
 
 参数解释
 
--c:模型配置文件，无需修改
+-video_file:指定需要提取分析的视频路径
 
--r:预训练模型权重位置
-
--vf:需要分析的视频
-
--p:生成3D姿势，若不需要则无需添加此参数
+-phase:表示测试阶段，无需修改
 
