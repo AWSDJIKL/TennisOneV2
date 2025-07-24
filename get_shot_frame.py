@@ -20,12 +20,12 @@ from TrackNetV3.dataset import Shuttlecock_Trajectory_Dataset, Video_IterableDat
 from TrackNetV3.utils.general import *
 import sys
 # from patsy import desc
-sys.path.append('/usr/local/python')
+# sys.path.append('/usr/local/python')
 from openpose import pyopenpose as op
 # Custom Params (refer to include/openpose/flags.hpp for more parameters)
 params = dict()
 # params["model_folder"] = "../../models/"
-params["model_folder"] = "/home/awsdjikl/TrackNetV3/models"
+params["model_folder"] = "./TrackNetV3/models"
 params["maximize_positives"] = "True"
 opWrapper = op.WrapperPython()
 opWrapper.configure(params)
@@ -838,7 +838,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--video_file', type=str, help='file path of the video')
-    parser.add_argument('--tracknet_file', type=str, default="/home/awsdjikl/TrackNetV3/exp/TrackNet_best.pt", help='file path of the TrackNet model checkpoint')
+    parser.add_argument('--tracknet_file', type=str, default="./TrackNetV3/exp/TrackNet_best.pt", help='file path of the TrackNet model checkpoint')
     parser.add_argument('--inpaintnet_file', type=str, default='', help='file path of the InpaintNet model checkpoint')
     parser.add_argument('--batch_size', type=int, default=16, help='batch size for inference')
     parser.add_argument('--eval_mode', type=str, default='weight', choices=['nonoverlap', 'average', 'weight'], help='evaluation mode')
@@ -1172,16 +1172,16 @@ if __name__ == '__main__':
     # yolo_model = YOLO('/home/awsdjikl/TrackNetV3/models/yolo11n-pose.pt', "pose")
     model_list = []
     config_list = [
-        "/home/awsdjikl/TrackNetV3/GCN/config/j.yaml",
-        "/home/awsdjikl/TrackNetV3/GCN/config/b.yaml",
-        "/home/awsdjikl/TrackNetV3/GCN/config/jm.yaml",
-        "/home/awsdjikl/TrackNetV3/GCN/config/bm.yaml",
+        "./TrackNetV3/GCN/config/j.yaml",
+        "./TrackNetV3/GCN/config/b.yaml",
+        "./TrackNetV3/GCN/config/jm.yaml",
+        "./TrackNetV3/GCN/config/bm.yaml",
     ]
     work_dir_list = [
-        "/home/awsdjikl/TrackNetV3/GCN/work_dir/j",
-        "/home/awsdjikl/TrackNetV3/GCN/work_dir/b",
-        "/home/awsdjikl/TrackNetV3/GCN/work_dir/jm",
-        "/home/awsdjikl/TrackNetV3/GCN/work_dir/bm",
+        "./TrackNetV3/GCN/work_dir/j",
+        "./TrackNetV3/GCN/work_dir/b",
+        "./TrackNetV3/GCN/work_dir/jm",
+        "./TrackNetV3/GCN/work_dir/bm",
     ]
     for c, wd in zip(config_list, work_dir_list):
         model_parser = get_parser()
